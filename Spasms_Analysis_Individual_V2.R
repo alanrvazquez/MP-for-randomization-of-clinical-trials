@@ -92,58 +92,58 @@ ref_line_col <- "black" # Color of reference line.
 par(mfrow = c(1, 1))
 
 
-pdf(file = "Spasms_DisImbalance.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Spasms_DisImbalance.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(Balance~Method, data = all_metrics, 
         ylab = 'Absolute difference in group size',
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(Balance~Method, data = all_metrics, 
         ylab = 'Absolute difference in group size',
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 dev.off()
 
-pdf(file = "Spasms_Energy.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Spasms_Energy.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(Energy~Method, data = all_metrics, 
         ylab = 'Energy', ylim = c(0, 1),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(Energy~Method, data = all_metrics, 
         ylab = 'Energy', ylim = c(0, 1),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["Energy"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
 # Analysis of Age
 
-pdf(file = "Spasms_Age_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Spasms_Age_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(M.Age~Method, data = all_metrics, 
         ylab = 'Difference Means Age', ylim = c(0, max(all_metrics$M.Age)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(M.Age~Method, data = all_metrics, 
         ylab = 'Difference Means Age', ylim = c(0, max(all_metrics$M.Age)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["M.Age"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
-pdf(file = "Spasms_Age_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Spasms_Age_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(SD.Age~Method, data = all_metrics, 
         ylab = 'Difference SD Age', ylim = c(0, max(all_metrics$SD.Age)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(SD.Age~Method, data = all_metrics, 
         ylab = 'Difference SD Age', ylim = c(0, max(all_metrics$SD.Age)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["SD.Age"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
@@ -151,41 +151,41 @@ dev.off()
 
 # Analysis of ISFreq
 
-pdf(file = "Spasms_ISFreq_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Spasms_ISFreq_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(M.ISFreq~Method, data = all_metrics, 
         ylab = 'Difference Means FIS', ylim = c(0, max(all_metrics$M.ISFreq)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(M.ISFreq~Method, data = all_metrics, 
         ylab = 'Difference Means FIS', ylim = c(0, max(all_metrics$M.ISFreq)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE,
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["M.ISFreq"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
-pdf(file = "Spasms_ISFreq_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Spasms_ISFreq_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(SD.ISFreq~Method, data = all_metrics, 
         ylab = 'Difference SD FIS', ylim = c(0, max(all_metrics$SD.ISFreq)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(SD.ISFreq~Method, data = all_metrics, 
         ylab = 'Difference SD FIS', ylim = c(0, max(all_metrics$SD.ISFreq)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["SD.ISFreq"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
 # Analysis of correct guess probability
 
-pdf(file = "Spasms_CG_Mean.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Spasms_CG_Mean.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(M.CG~Method, data = all_metrics, 
         ylab = 'Mean Correct Guess Probability', yaxt = "n", ylim = c(0, 1),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 axis(2, at = seq(0, 1, by = 0.25), cex.lab = lab.font.size, cex.axis = ax.font.size)
 grid(NULL,NA, lty = 6, equilogs=F)
 abline(h = 0.25, col = "lightgray", lty = "dotdash", lwd = par("lwd"))
@@ -195,7 +195,7 @@ abline(h = 1, col = "lightgray", lty = "dotdash", lwd = par("lwd"))
 boxplot(M.CG~Method, data = all_metrics, 
         ylab = 'Mean Correct Guess Probability', yaxt = "n",
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 dev.off()
 
 # Radar plot.
@@ -210,7 +210,7 @@ colnames(data.p) <- c("Balance in Group Sizes", "Energy", "Mean Correct Guess Pr
 data.p <- rbind(rep(2, ncol(data.p)), rep(0, ncol(data.p)), data.p)
 
 # If you remove the 2 first lines, the function compute the max and min of each variable with the available data:
-pdf(file = "Spasms_Radar_Mean.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Spasms_Radar_Mean.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 radarchart( data.p[-c(1,2),]  , axistype=0 , maxmin=F,
             #custom polygon
             pcol=colors_border , pfcol=colors_in , plwd=4 , plty=1,
