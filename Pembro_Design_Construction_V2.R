@@ -8,7 +8,7 @@
 library(randomizeR)
 library(e1071) # For "moments" function.
 
-source("adaptive_randomization.R")
+source("code/adaptive_randomization.R")
 
 max.sim <- 1000
 
