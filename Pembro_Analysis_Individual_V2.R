@@ -7,8 +7,8 @@ library(e1071) # For "moments" function.
 library(RColorBrewer) # For colorful plots.
 library(fmsb) # For radar chart.
 
-source("adaptive_randomization.R")
-load("PembroDesigns_Individual_v2.RData")
+source("code/adaptive_randomization.R")
+load("designs/PembroDesigns_Individual_v2.RData")
 
 
 # Develop simulation protocol.

@@ -8,7 +8,7 @@
 
 library(randomizeR) # For "pbrPar" permuted randomized block.
 library(Minirand) # For Pocock and Simon minimization method.
-source("auxiliar_functions.R")
+source("code/auxiliar_functions.R")
 
 # Ma and Hu (2013). Randomization algorithm based on Kernel Density.
 
