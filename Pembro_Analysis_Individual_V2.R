@@ -93,58 +93,58 @@ ref_line_col <- "black" # Color of reference line.
 # Box plot for difference in group sizes.
 par(mfrow = c(1, 1))
 
-pdf(file = "Pembro_DisImbalance.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_DisImbalance.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(Balance~Method, data = all_metrics, 
         ylab = 'Absolute difference in group size', col = colors_in, 
         medcol = colors_border, outcol = colors_in,
-        cex.lab = lab.font.size, cex.axis = ax.font.size)
+        cex.lab = lab.font.size, cex.axis = ax.font.size, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(Balance~Method, data = all_metrics, 
         ylab = 'Absolute difference in group size', col = colors_in, 
         medcol = colors_border, outcol = colors_in,
-        cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE)
+        cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, notch = TRUE)
 dev.off()
 
-pdf(file = "Pembro_Energy.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_Energy.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(Energy~Method, data = all_metrics, 
         ylab = 'Energy', ylim = c(0, 1), col = colors_in, 
         medcol = colors_border, outcol = colors_in,
-        cex.lab = lab.font.size, cex.axis = ax.font.size)
+        cex.lab = lab.font.size, cex.axis = ax.font.size, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(Energy~Method, data = all_metrics, 
         ylab = 'Energy', ylim = c(0, 1), col = colors_in, 
         medcol = colors_border, outcol = colors_in,
-        cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE)
+        cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, notch = TRUE)
 abline(h = original.result["Energy"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
 # Analysis of Age
 
-pdf(file = "Pembro_Age_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_Age_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(M.Age~Method, data = all_metrics, 
         ylab = 'Difference Means Age', ylim = c(0, max(all_metrics$M.Age)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(M.Age~Method, data = all_metrics, 
         ylab = 'Difference Means Age', ylim = c(0, max(all_metrics$M.Age)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in,medcol = colors_border, outcol = colors_in)
+        col = colors_in,medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["M.Age"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
-pdf(file = "Pembro_Age_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_Age_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(SD.Age~Method, data = all_metrics, 
         ylab = 'Difference SD Age', ylim = c(0, max(all_metrics$SD.Age)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(SD.Age~Method, data = all_metrics, 
         ylab = 'Difference SD Age', ylim = c(0, max(all_metrics$SD.Age)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["SD.Age"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
@@ -152,70 +152,70 @@ dev.off()
 
 # Analysis of PD.L1.MPS
 
-pdf(file = "Pembro_PD_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_PD_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(M.PD.L1.MPS~Method, data = all_metrics, 
         ylab = 'Difference Means PD-L1', ylim = c(0, max(all_metrics$M.PD.L1.MPS)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(M.PD.L1.MPS~Method, data = all_metrics, 
         ylab = 'Difference Means PD-L1', ylim = c(0, max(all_metrics$M.PD.L1.MPS)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["M.PD.L1.MPS"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
-pdf(file = "Pembro_PD_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_PD_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(SD.PD.L1.MPS~Method, data = all_metrics, 
         ylab = 'Difference SD PD-L1', ylim = c(0, max(all_metrics$SD.PD.L1.MPS)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(SD.PD.L1.MPS~Method, data = all_metrics, 
         ylab = 'Difference SD PD-L1', ylim = c(0, max(all_metrics$SD.PD.L1.MPS)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["SD.PD.L1.MPS"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
 # Analysis of Hemoglobin
 
-pdf(file = "Pembro_Hemoglobin_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_Hemoglobin_Means.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(M.Hemoglobin~Method, data = all_metrics, 
         ylab = 'Difference Means Hemoglobin', ylim = c(0, max(all_metrics$M.Hemoglobin)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(M.Hemoglobin~Method, data = all_metrics, 
         ylab = 'Difference Means Hemoglobin', ylim = c(0, max(all_metrics$M.Hemoglobin)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["M.Hemoglobin"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
-pdf(file = "Pembro_Hemoglobin_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_Hemoglobin_SDs.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(SD.Hemoglobin~Method, data = all_metrics, 
         ylab = 'Difference SD Hemoglobin', ylim = c(0, max(all_metrics$SD.Hemoglobin)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 grid(NULL,NULL, lty = 6)
 boxplot(SD.Hemoglobin~Method, data = all_metrics, 
         ylab = 'Difference SD Hemoglobin', ylim = c(0, max(all_metrics$SD.Hemoglobin)),
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 abline(h = original.result["SD.Hemoglobin"], col = ref_line_col,
        lty=2, lwd=3)
 dev.off()
 
 
-pdf(file = "Pembro_CG_Mean.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_CG_Mean.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 boxplot(M.CG~Method, data = all_metrics, yaxt = "n",
         ylab = 'Mean Correct Guess Probability', ylim = c(0,1),
         cex.lab = lab.font.size, cex.axis = ax.font.size, col = colors_in, 
-        medcol = colors_border, outcol = colors_in)
+        medcol = colors_border, outcol = colors_in, notch = TRUE)
 axis(2, at = seq(0, 1, by = 0.25), cex.lab = lab.font.size, cex.axis = ax.font.size)
 grid(NULL,NA, lty = 6, equilogs=F)
 abline(h = 0.25, col = "lightgray", lty = "dotdash", lwd = par("lwd"))
@@ -225,7 +225,7 @@ abline(h = 1, col = "lightgray", lty = "dotdash", lwd = par("lwd"))
 boxplot(M.CG~Method, data = all_metrics, yaxt = "n",
         ylab = 'Mean Correct Guess Probability',
         cex.lab = lab.font.size, cex.axis = ax.font.size, add = TRUE, 
-        col = colors_in, medcol = colors_border, outcol = colors_in)
+        col = colors_in, medcol = colors_border, outcol = colors_in, notch = TRUE)
 dev.off()
 
 
@@ -241,7 +241,7 @@ colnames(data.p) <- c("Balance in Group Sizes", "Energy", "Mean Correct Guess Pr
 data.p <- rbind(rep(2, ncol(data.p)), rep(0, ncol(data.p)), data.p)
 
 # If you remove the 2 first lines, the function compute the max and min of each variable with the available data:
-pdf(file = "Pembro_Radar_Mean.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
+pdf(file = "figures/Pembro_Radar_Mean.pdf", width = 11, height = 8) # defaults to 7 x 7 inches
 radarchart( data.p[-c(1,2),]  , axistype=0 , maxmin=F,
             #custom polygon
             pcol=colors_border , pfcol=colors_in , plwd=4 , plty=1,
